@@ -28,7 +28,7 @@ public class WebSecurity extends WebSecurityConfigurerAdapter{
 		.anyRequest()
 		.authenticated()
 		.and()
-		.addFilter(getAuthenticationFilter());
+		.addFilter(new AuthenticationFilter(authenticationManager()));
 	}
 	
 	@Override

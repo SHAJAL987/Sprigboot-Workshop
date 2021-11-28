@@ -1,5 +1,0 @@
-package com.springboot.app.api.model.OnetoOne;
-
-public enum Gender {
-
-}
