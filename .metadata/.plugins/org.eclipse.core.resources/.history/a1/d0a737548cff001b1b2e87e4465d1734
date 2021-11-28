@@ -1,0 +1,40 @@
+package com.springboot.first.app;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class StudentController {
+
+	// Location: http://localhost:3000/student
+	@GetMapping("/student")
+	public Student getStudent() {
+		return new Student("Ashiqul Islam", "Shajal");
+	}
+
+	// Location: http://localhost:3000/students
+	@GetMapping("students")
+	public List<Student> getStudents() {
+
+		List<Student> students = new ArrayList<>();
+
+		students.add(new Student("Muktaadir", "Soyeb"));
+		students.add(new Student("Md.Ashiqul Islam", "Shajal"));
+		students.add(new Student("Bhabatush", "Debnath"));
+		students.add(new Student("Dada", "Dadi"));
+
+		return students;
+
+	}
+
+	// Location: http://localhost:3000/student/{fistName}/{lastName}
+	@GetMapping("{firstName}/{lastName}")
+	public Student studentPathVariable(@PathVariable("firstName") String pFirstName,
+			@PathVariable("lastName") String pLastName) {
+		return new Student(pFirstName, pLastName);
+	}
+}

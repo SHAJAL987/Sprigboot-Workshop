@@ -1,0 +1,5 @@
+package com.springbasic.app.ws.shared.dto;
+
+public class UserDto {
+
+}

@@ -1,0 +1,13 @@
+package com.example.demo;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+@ResponseBody
+public class ProductController {
+	
+	@GetMapping(value="/")
+	public String test() {
+		return "Bismillah";
+	}
+}

@@ -1,0 +1,5 @@
+package com.springboot.app.api.model.OnetoOne;
+
+public class UserProfile {
+
+}
